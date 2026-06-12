@@ -131,7 +131,7 @@ function sidebar(counts) {
     if (n.sep) return `<div class="sep">${esc(n.sep)}</div>`;
     const active = S.route === n.id ? 'active' : '';
     const c = counts[n.count] ?? null;
-    return `<a href="#/${n.id}" class="${active}"><span class="ic">${n.ic}</span>${esc(n.label)}${c != null && c > 0 ? `<span class="count">${c}</span>` : ''}</a>`;
+    return `<a href="#/${n.id}" class="${active}" style="--ic-color:${esc(n.color || 'currentColor')}"><span class="ic">${n.ic}</span>${esc(n.label)}${c != null && c > 0 ? `<span class="count">${c}</span>` : ''}</a>`;
   }).join('');
   return `
     <aside class="sidebar">

@@ -18,18 +18,18 @@ const IC = {
   ventures: svg('<circle cx="12" cy="12" r="9.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>'),
 };
 export const NAV = [
-  { id: 'overview', label: 'Overview', ic: IC.overview },
-  { id: 'people', label: 'People', ic: IC.people, count: 'people' },
-  { id: 'onboarding', label: 'Onboarding', ic: IC.onboarding, count: 'onboarding' },
-  { id: 'access', label: 'Access Layers', ic: IC.access },
-  { id: 'loops', label: 'Loops', ic: IC.loops },
-  { id: 'requests', label: 'Requests', ic: IC.requests, count: 'requests' },
-  { id: 'groups', label: 'Groups', ic: IC.groups, count: 'groups' },
-  { id: 'kpis', label: 'KPIs', ic: IC.kpis },
-  { id: 'capture', label: 'Capture', ic: IC.capture },
+  { id: 'overview', label: 'Overview', ic: IC.overview, color: '#ffd84d' },
+  { id: 'people', label: 'People', ic: IC.people, count: 'people', color: '#7cc8ff' },
+  { id: 'onboarding', label: 'Onboarding', ic: IC.onboarding, count: 'onboarding', color: '#5eead4' },
+  { id: 'access', label: 'Access Layers', ic: IC.access, color: '#fbbf24' },
+  { id: 'loops', label: 'Loops', ic: IC.loops, color: '#c4b5fd' },
+  { id: 'requests', label: 'Requests', ic: IC.requests, count: 'requests', color: '#fda4af' },
+  { id: 'groups', label: 'Groups', ic: IC.groups, count: 'groups', color: '#86efac' },
+  { id: 'kpis', label: 'KPIs', ic: IC.kpis, color: '#67e8f9' },
+  { id: 'capture', label: 'Capture', ic: IC.capture, color: '#fcd34d' },
   { sep: 'System' },
-  { id: 'health', label: 'Health', ic: IC.health },
-  { id: 'ventures', label: 'Ventures', ic: IC.ventures },
+  { id: 'health', label: 'Health', ic: IC.health, color: '#f87171' },
+  { id: 'ventures', label: 'Ventures', ic: IC.ventures, color: '#a5b4fc' },
 ];
 
 // ---- shared bits ----
