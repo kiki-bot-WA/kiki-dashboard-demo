@@ -47,7 +47,10 @@ function stat(n, label, unit) { return `<div class="stat"><div class="n">${n}${u
 
 // =================================================================== OVERVIEW
 function overview(ctx) {
-  const e = ctx.esc, V = ctx.ventures(), people = ctx.S.people, groups = ctx.S.groups;
+  const e = ctx.esc, cur = ctx.currentV();
+  // scope EVERYTHING to the selected venture (or all when "All ventures")
+  const V = cur ? [cur] : ctx.ventures();
+  const people = ctx.vPeople(), groups = ctx.vGroups();
   const totalActive = people.filter((p) => p.status === 'active' && !p.isOwner).length;
   const onboarding = people.filter((p) => ['await_owner', 'introduced', 'await_tone'].includes(p.status)).length;
   const openReq = people.filter((p) => p.car && p.car.step && p.car.step !== 'done').length;
@@ -68,8 +71,8 @@ function overview(ctx) {
   const html = `
     <div class="bento">
       <div class="card span2">
-        <h3>Across all ventures</h3>
-        <div class="row" style="gap:34px">${stat(totalActive, 'Active people')}${stat(onboarding, 'In onboarding')}${stat(openReq, 'Open requests')}${stat(V.length, 'Ventures')}</div>
+        <h3>${cur ? e(cur.name) : 'Across all ventures'}</h3>
+        <div class="row" style="gap:34px">${stat(totalActive, 'Active people')}${stat(onboarding, 'In onboarding')}${stat(openReq, 'Open requests')}${cur ? stat(groups.length, 'Groups') : stat(V.length, 'Ventures')}</div>
       </div>
       <div class="card span2"><h3>Kiki health</h3>${healthMini(ctx)}</div>
       ${vcards}
@@ -89,7 +92,7 @@ function healthMini(ctx) {
     <span class="spacer"></span><a class="btn sm ghost" href="#/health">Details</a></div>`;
 }
 function kpiCycle(ctx) {
-  const e = ctx.esc; const agents = ctx.S.people.filter((p) => p.layer === 'agent' && p.status === 'active');
+  const e = ctx.esc; const agents = ctx.vPeople().filter((p) => p.layer === 'agent' && p.status === 'active');
   if (!agents.length) return '<div class="empty">No active agents</div>';
   const done = agents.filter((a) => a.kpiDoneWeek).length;
   const pct = Math.round((done / agents.length) * 100);
