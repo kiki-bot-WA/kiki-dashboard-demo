@@ -1,1 +1,123 @@
-{"owner":"818040841631@s.whatsapp.net","ownerNumber":"+818040841631","ventures":[{"id":"exceed","name":"Exceed Real Estate","accent":"#ffd84d","emoji":"🏢","layers":[{"id":"agent","name":"agent","desc":"Active sales force — KPI + car booking"},{"id":"CEO","name":"CEO","desc":"Teruo — approvals, full (vetted) access"},{"id":"team-lead","name":"team-lead","desc":"Sees their agents' KPI + pipeline"}],"loops":[{"id":"weekly-kpi","name":"Weekly KPI","cadence":"Fri 14:00","audience":"active agents"}],"requests":[{"id":"company-car","name":"Company Car","approver":"CEO"}],"counts":{"people":14,"activeAgents":7,"onboarding":3,"groups":2,"openRequests":1}},{"id":"peanut","name":"Peanut eSIM","accent":"#f5a623","emoji":"🥜","layers":[{"id":"partner","name":"partner","desc":"Equal JV partner — full Peanut access"},{"id":"crew","name":"crew","desc":"Seed crew users — early features"}],"loops":[{"id":"crew-pulse","name":"Crew Pulse roster","cadence":"monthly","audience":"crew"}],"requests":[{"id":"esim-topup","name":"Top-up help","approver":"none"}],"counts":{"people":4,"activeAgents":0,"onboarding":2,"groups":1,"openRequests":0}}],"health":{"connected":true,"heartbeatAge":12,"stateMtime":1781212483399.5815,"hosts":[{"id":"mini","name":"Mac Mini (donguri)","role":"live host","tailscale":"100.89.74.4"},{"id":"i13","name":"i13 Intel Air","role":"external watchdog","tailscale":"100.77.253.100"},{"id":"m16","name":"M16 MacBook Pro","role":"dev + backups + vault","tailscale":"100.104.176.14"}],"rateLimit":{"cap":60,"used":7,"window":"hour"},"dev":true},"dev":true}
+{
+ "owner": "demo@owner",
+ "ownerNumber": "+0000000000",
+ "ventures": [
+  {
+   "id": "exceed",
+   "name": "Exceed Real Estate",
+   "accent": "#ffd84d",
+   "emoji": "\ud83c\udfe2",
+   "layers": [
+    {
+     "id": "agent",
+     "name": "agent",
+     "desc": "Active sales force \u2014 KPI + car booking"
+    },
+    {
+     "id": "CEO",
+     "name": "CEO",
+     "desc": "Teruo \u2014 approvals, full (vetted) access"
+    },
+    {
+     "id": "team-lead",
+     "name": "team-lead",
+     "desc": "Sees their agents' KPI + pipeline"
+    }
+   ],
+   "loops": [
+    {
+     "id": "weekly-kpi",
+     "name": "Weekly KPI",
+     "cadence": "Fri 14:00",
+     "audience": "active agents"
+    }
+   ],
+   "requests": [
+    {
+     "id": "company-car",
+     "name": "Company Car",
+     "approver": "CEO"
+    }
+   ],
+   "counts": {
+    "people": 14,
+    "activeAgents": 7,
+    "onboarding": 3,
+    "groups": 2,
+    "openRequests": 1
+   }
+  },
+  {
+   "id": "peanut",
+   "name": "Peanut eSIM",
+   "accent": "#f5a623",
+   "emoji": "\ud83e\udd5c",
+   "layers": [
+    {
+     "id": "partner",
+     "name": "partner",
+     "desc": "Equal JV partner \u2014 full Peanut access"
+    },
+    {
+     "id": "crew",
+     "name": "crew",
+     "desc": "Seed crew users \u2014 early features"
+    }
+   ],
+   "loops": [
+    {
+     "id": "crew-pulse",
+     "name": "Crew Pulse roster",
+     "cadence": "monthly",
+     "audience": "crew"
+    }
+   ],
+   "requests": [
+    {
+     "id": "esim-topup",
+     "name": "Top-up help",
+     "approver": "none"
+    }
+   ],
+   "counts": {
+    "people": 4,
+    "activeAgents": 0,
+    "onboarding": 2,
+    "groups": 1,
+    "openRequests": 0
+   }
+  }
+ ],
+ "health": {
+  "connected": true,
+  "heartbeatAge": 12,
+  "stateMtime": 1781212483399.5815,
+  "hosts": [
+   {
+    "id": "mini",
+    "name": "Mac Mini (donguri)",
+    "role": "live host",
+    "tailscale": "100.89.74.4"
+   },
+   {
+    "id": "i13",
+    "name": "i13 Intel Air",
+    "role": "external watchdog",
+    "tailscale": "100.77.253.100"
+   },
+   {
+    "id": "m16",
+    "name": "M16 MacBook Pro",
+    "role": "dev + backups + vault",
+    "tailscale": "100.104.176.14"
+   }
+  ],
+  "rateLimit": {
+   "cap": 60,
+   "used": 7,
+   "window": "hour"
+  },
+  "dev": true
+ },
+ "dev": true
+}
