@@ -44,7 +44,9 @@ async function cmd(action, payload = {}, note) {
 // ---- venture helpers ----
 const ventures = () => S.boot?.ventures || [];
 const currentV = () => ventures().find((v) => v.id === S.venture) || null;
-const inVenture = (x) => S.venture === 'all' || x.venture === S.venture || x.venture === currentV()?.name;
+// People with NO venture yet (mid-onboarding — the org poll comes late in the
+// flow) are visible in every venture view, otherwise they'd be invisible.
+const inVenture = (x) => S.venture === 'all' || !x.venture || x.venture === S.venture || x.venture === currentV()?.name;
 const vPeople = () => S.people.filter(inVenture);
 const vGroups = () => S.groups.filter(inVenture);
 function applyAccent() {
@@ -222,4 +224,17 @@ window.addEventListener('hashchange', () => { S.route = location.hash.slice(2) |
     if (!S.token) return;
     try { S.boot.health = await api('/api/health'); const p = $('.health-pill'); if (p) p.classList.toggle('bad', S.boot.health.connected === false); } catch {}
   }, 15000);
+  // live data polling: re-render when people/groups change on the bot side —
+  // skipped while an overlay is open so it never interrupts an action.
+  let lastSnap = '';
+  setInterval(async () => {
+    if (!S.token) return;
+    if ($('#drawer')?.classList.contains('show') || $('#modal')?.classList.contains('show')) return;
+    try {
+      const [people, groups] = await Promise.all([api('/api/people'), api('/api/groups')]);
+      const snap = JSON.stringify([people, groups]);
+      if (lastSnap && snap !== lastSnap) { S.people = people; S.groups = groups; render(); }
+      lastSnap = snap;
+    } catch {}
+  }, 10000);
 })();
