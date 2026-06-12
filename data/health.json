@@ -1,1 +1,31 @@
-{"connected":true,"heartbeatAge":12,"stateMtime":1781212483399.5815,"hosts":[{"id":"mini","name":"Mac Mini (donguri)","role":"live host","tailscale":"100.89.74.4"},{"id":"i13","name":"i13 Intel Air","role":"external watchdog","tailscale":"100.77.253.100"},{"id":"m16","name":"M16 MacBook Pro","role":"dev + backups + vault","tailscale":"100.104.176.14"}],"rateLimit":{"cap":60,"used":7,"window":"hour"},"dev":true}
+{
+ "connected": true,
+ "heartbeatAge": 12,
+ "stateMtime": 1781212483399.5815,
+ "hosts": [
+  {
+   "id": "mini",
+   "name": "Mac Mini (donguri)",
+   "role": "live host",
+   "tailscale": "100.x.x.x (demo)"
+  },
+  {
+   "id": "i13",
+   "name": "i13 Intel Air",
+   "role": "external watchdog",
+   "tailscale": "100.x.x.x (demo)"
+  },
+  {
+   "id": "m16",
+   "name": "M16 MacBook Pro",
+   "role": "dev + backups + vault",
+   "tailscale": "100.x.x.x (demo)"
+  }
+ ],
+ "rateLimit": {
+  "cap": 60,
+  "used": 7,
+  "window": "hour"
+ },
+ "dev": true
+}
